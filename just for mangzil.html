@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Mangzil 🤍</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial,sans-serif;
+    color:#29465a;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at 15% 15%,#fff,transparent 30%),
+    linear-gradient(135deg,#fff8f4,#f8ebe6,#edf6fa);
+}
+
+/* =========================
+   DEKORASI
+========================= */
+
+.float{
+    position:fixed;
+    z-index:0;
+    pointer-events:none;
+    color:#88a7b8;
+    opacity:.6;
+    animation:float 5s ease-in-out infinite;
+}
+
+.f1{
+    left:7%;
+    top:18%;
+    font-size:20px;
+}
+
+.f2{
+    right:8%;
+    top:28%;
+    font-size:18px;
+    animation-delay:1s;
+}
+
+.f3{
+    left:12%;
+    bottom:20%;
+    font-size:18px;
+    animation-delay:2s;
+}
+
+.f4{
+    right:12%;
+    bottom:15%;
+    font-size:22px;
+    animation-delay:3s;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(0);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(8deg);
+    }
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:25px 16px;
+
+    position:relative;
+    z-index:1;
+}
+
+.page.active{
+    display:flex;
+    animation:pageIn .6s ease;
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    width:100%;
+    max-width:440px;
+
+    padding:28px 22px;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.9);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 25px 70px rgba(70,80,90,.13);
+
+    text-align:center;
+}
+
+.small{
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#899aa3;
+    font-weight:bold;
+}
+
+.script{
+    font-size:26px;
+    font-weight:bold;
+    font-style:italic;
+    color:#315c78;
+    margin:10px 0;
+}
+
+h1{
+    font-size:28px;
+    line-height:1.35;
+}
+
+p{
+    color:#687c87;
+    line-height:1.7;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    border:none;
+    border-radius:50px;
+
+    padding:14px 25px;
+
+    background:#4b9bd0;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:18px;
+
+    transition:.2s;
+
+    box-shadow:
+    0 9px 20px rgba(75,155,208,.2);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn:active{
+    transform:scale(.96);
+}
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.spotify{
+    width:100%;
+
+    background:#181818;
+
+    color:white;
+
+    border-radius:14px;
+
+    padding:10px 12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-align:left;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18);
+}
+
+.cover{
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+    border-radius:7px;
+
+    background:
+    linear-gradient(135deg,#dcecf3,#efd5d1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.song-info{
+    flex:1;
+    min-width:0;
+}
+
+.song-title{
+    font-size:13px;
+    font-weight:bold;
+}
+
+.song-sub{
+    font-size:10px;
+    color:#aaa;
+    margin-top:3px;
+}
+
+.progress{
+    height:3px;
+
+    background:#444;
+
+    border-radius:10px;
+
+    margin-top:7px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:white;
+}
+
+.play{
+    width:36px;
+    height:36px;
+
+    flex-shrink:0;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#111;
+
+    cursor:pointer;
+}
+
+.note{
+    font-size:11px;
+    color:#85949c;
+    margin-top:12px;
+}
+
+/* =========================
+   PILIHAN
+========================= */
+
+.choice-box{
+    margin-top:20px;
+}
+
+.choice{
+    width:100%;
+
+    padding:14px;
+
+    margin:7px 0;
+
+    border:1px solid #dce7ec;
+
+    background:white;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    color:#527080;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.choice:hover{
+    transform:translateY(-3px);
+    background:#f2f9fc;
+}
+
+.choice:active{
+    transform:scale(.97);
+}
+
+.choice-result{
+    min-height:40px;
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:#5f7d8c;
+
+    font-weight:bold;
+}
+
+/* =========================
+   GAME
+========================= */
+
+.game{
+    position:relative;
+
+    width:100%;
+    height:370px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:
+    radial-gradient(circle at 20% 20%,#fff,transparent 25%),
+    linear-gradient(135deg,#eaf7ff,#fff0f4);
+
+    border:1px solid #dceaf0;
+}
+
+.game-head{
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:100;
+
+    display:flex;
+    justify-content:space-around;
+
+    padding:12px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(8px);
+}
+
+.stat{
+    font-size:9px;
+    color:#7d919d;
+}
+
+.stat b{
+    display:block;
+
+    font-size:17px;
+
+    color:#3f6f8d;
+
+    margin-top:2px;
+}
+
+.game-start{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:30px;
+
+    z-index:20;
+}
+
+.game-start .emoji{
+    font-size:55px;
+
+    animation:bounce 1.2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.game-start button{
+    border:none;
+
+    background:#4b9bd0;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* TARGET */
+
+.target{
+
+    position:absolute;
+
+    width:58px;
+    height:58px;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:white;
+
+    box-shadow:
+    0 8px 22px rgba(60,90,110,.18);
+
+    font-size:29px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    z-index:50;
+
+    padding:0;
+
+    animation:pulse .8s infinite alternate;
+
+    transition:
+    left .18s ease,
+    top .18s ease,
+    transform .12s ease;
+}
+
+.target:hover{
+    transform:scale(1.12);
+}
+
+.target:active{
+    transform:scale(.78);
+}
+
+@keyframes pulse{
+
+    from{
+        transform:scale(.93);
+    }
+
+    to{
+        transform:scale(1.07);
+    }
+}
+
+.game-result{
+    min-height:38px;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#557789;
+}
+
+/* =========================
+   ALBUM
+========================= */
+
+.album{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+    margin-top:20px;
+}
+
+.photo{
+    background:white;
+
+    padding:8px 8px 17px;
+
+    border-radius:9px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.11);
+
+    animation:photoFloat 4s ease-in-out infinite;
+}
+
+.photo:nth-child(1){
+    transform:rotate(-3deg);
+}
+
+.photo:nth-child(2){
+    transform:rotate(3deg);
+    animation-delay:.7s;
+}
+
+.photo:nth-child(3){
+    transform:rotate(2deg);
+    animation-delay:1.2s;
+}
+
+.photo:nth-child(4){
+    transform:rotate(-2deg);
+    animation-delay:1.7s;
+}
+
+@keyframes photoFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-8px) rotate(2deg);
+    }
+}
+
+.photo img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:5px;
+}
+
+.caption{
+
+    margin-top:8px;
+
+    font-size:11px;
+
+    color:#72818a;
+
+    font-style:italic;
+}
+
+/* =========================
+   SURAT IZIN
+========================= */
+
+.permission{
+
+    background:
+    linear-gradient(145deg,#f5fbff,#fff5f1);
+
+    border-radius:22px;
+
+    padding:22px;
+
+    text-align:left;
+}
+
+.permission-title{
+
+    text-align:center;
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    color:#456e85;
+}
+
+.check{
+
+    padding:9px 0;
+
+    color:#607986;
+
+    font-size:14px;
+}
+
+.warning{
+
+    margin-top:17px;
+
+    padding:13px;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    text-align:center;
+
+    font-size:13px;
+
+    color:#667b87;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-card{
+    position:relative;
+
+    overflow:hidden;
+}
+
+.final-box{
+
+    background:
+    linear-gradient(145deg,#f5fbff,#fff5f1);
+
+    padding:22px;
+
+    border-radius:23px;
+
+    text-align:left;
+}
+
+.final-box p{
+    font-size:14px;
+}
+
+.quote{
+
+    margin:20px 0;
+
+    padding:17px;
+
+    border-left:4px solid #78acd0;
+
+    background:rgba(255,255,255,.7);
+
+    border-radius:0 15px 15px 0;
+
+    font-style:italic;
+
+    color:#506b7a;
+
+    line-height:1.7;
+}
+
+.signature{
+
+    text-align:right;
+
+    font-weight:bold;
+
+    font-style:italic;
+
+    color:#527c96;
+
+    margin-top:20px;
+}
+
+.heart{
+
+    font-size:70px;
+
+    animation:heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+/* GREEN FLAG */
+
+.greenflag{
+
+    display:inline-block;
+
+    margin:8px auto 18px;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    background:#e9f7ed;
+
+    color:#4c8761;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    animation:greenPulse 2s infinite;
+}
+
+@keyframes greenPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+}
+
+/* METER */
+
+.green-meter{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    background:#f3faf5;
+
+    border:1px solid #dceee1;
+}
+
+.meter-title{
+
+    font-size:11px;
+
+    color:#71877a;
+
+    margin-bottom:9px;
+}
+
+.meter-bar{
+
+    width:100%;
+
+    height:9px;
+
+    background:#dfeee3;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.meter-fill{
+
+    width:100%;
+
+    height:100%;
+
+    background:#69aa78;
+
+    border-radius:20px;
+
+    animation:meter 2s ease;
+}
+
+@keyframes meter{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+.meter-text{
+
+    margin-top:8px;
+
+    font-size:10px;
+
+    color:#63816d;
+}
+
+/* FINAL BUTTONS */
+
+.read-result{
+
+    min-height:25px;
+
+    margin-top:12px;
+
+    color:#62806e;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.extra-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-top:8px;
+}
+
+.cute-btn{
+
+    width:100%;
+
+    border:1px solid #dbe8ec;
+
+    background:white;
+
+    color:#58717f;
+
+    padding:12px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.cute-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#f5fafc;
+}
+
+.cute-btn:active{
+
+    transform:scale(.97);
+}
+
+.hug-result{
+
+    min-height:25px;
+
+    margin-top:12px;
+
+    font-size:13px;
+
+    color:#638092;
+
+    font-weight:bold;
+}
+
+.last-note{
+
+    margin-top:20px;
+
+    font-size:10px;
+
+    color:#a0adb2;
+
+    line-height:1.6;
+}
+
+.restart{
+
+    border:none;
+
+    background:transparent;
+
+    color:#8c9da5;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    margin-top:15px;
+
+    font-size:11px;
+}
+
+/* CONFETTI */
+
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    font-size:20px;
+
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+@media(max-width:500px){
+
+    .card{
+        padding:25px 17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="float f1">♡</div>
+<div class="float f2">✦</div>
+<div class="float f3">♡</div>
+<div class="float f4">✧</div>
+
+
+<!-- =========================
+     MUSIK
+========================= -->
+
+<audio
+id="music"
+loop
+preload="auto">
+
+<source
+src="https://raw.githubusercontent.com/Priscalusiana/Musik/46012bf45a0996859a93a3d1c2ab10d8d837d580/monokrom_tulus.mp3"
+type="audio/mpeg">
+
+</audio>
+
+
+<!-- =========================
+     HALAMAN 1
+========================= -->
+
+<section
+class="page active"
+id="page1">
+
+<div class="card">
+
+<div class="small">
+HEY, MANGZIL 👀
+</div>
+
+<h1>
+Sebelum lanjut...
+</h1>
+
+<p style="font-size:13px;">
+
+ada satu lagu dulu.
+<br>
+dengerin bentar 🎧
+
+</p>
+
+
+<div class="spotify">
+
+<div class="cover">
+🤍
+</div>
+
+<div class="song-info">
+
+<div class="song-title">
+Monokrom
+</div>
+
+<div class="song-sub">
+Tulus • buat nemenin bentar 🤍
+</div>
+
+<div class="progress">
+
+<div
+class="progress-fill"
+id="progress">
+</div>
+
+</div>
+
+</div>
+
+
+<button
+class="play"
+id="play"
+onclick="toggleMusic()">
+
+▶
+
+</button>
+
+</div>
+
+
+<div class="note">
+play dulu baru lanjut 😌
+</div>
+
+
+<button
+class="btn"
+id="continueBtn"
+onclick="nextPage(2)"
+disabled
+style="opacity:.45">
+
+Lanjut →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HALAMAN 2
+========================= -->
+
+<section
+class="page"
+id="page2">
+
+<div class="card">
+
+<div class="small">
+SEBELUM MAIN
+</div>
+
+<div class="script">
+aku mau nanya sesuatu 👀
+</div>
+
+<h1>
+Kamu kalau lagi sibuk biasanya...
+</h1>
+
+
+<div class="choice-box">
+
+<button
+class="choice"
+onclick="answer('A')">
+☕ "santai kok"
+</button>
+
+<button
+class="choice"
+onclick="answer('B')">
+📱 buka 17 aplikasi sekaligus
+</button>
+
+<button
+class="choice"
+onclick="answer('C')">
+😭 "sebentar lagi selesai"
+</button>
+
+<button
+class="choice"
+onclick="answer('D')">
+💀 tiba-tiba lupa waktu
+</button>
+
+<button
+class="choice"
+onclick="answer('E')">
+🫠 pura-pura produktif dulu
+</button>
+
+<button
+class="choice"
+onclick="answer('F')">
+🛌 rebahan sambil mikirin kerjaan
+</button>
+
+<button
+class="choice"
+onclick="answer('G')">
+🤡 bilang "nanti aja" terus lupa
+</button>
+
+<button
+class="choice"
+onclick="answer('H')">
+🧠 otak masih loading...
+</button>
+
+</div>
+
+
+<div
+class="choice-result"
+id="choiceResult">
+</div>
+
+
+<button
+class="btn"
+onclick="nextPage(3)">
+
+Oke cukup interogasinya 😭
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HALAMAN 3 GAME
+========================= -->
+
+<section
+class="page"
+id="page3">
+
+<div class="card">
+
+<div class="small">
+MINI GAME 🎮
+</div>
+
+<div class="script">
+Tes refleks dulu
+</div>
+
+<p>
+
+Tangkap emoji yang muncul.
+
+<br>
+
+Awalnya santai.
+<br>
+Nanti baru agak cepat 😭
+
+</p>
+
+
+<div
+class="game"
+id="game">
+
+<div class="game-head">
+
+<div class="stat">
+SCORE
+<b id="score">0</b>
+</div>
+
+<div class="stat">
+TIME
+<b id="time">15</b>
+</div>
+
+<div class="stat">
+COMBO
+<b id="combo">0</b>
+</div>
+
+</div>
+
+
+<div
+class="game-start"
+id="gameStart">
+
+<div class="emoji">
+🎯
+</div>
+
+<h3>
+Seberapa fokus kamu?
+</h3>
+
+<p>
+15 detik. Santai dulu.
+</p>
+
+<button
+onclick="startGame()">
+
+GAS 🚀
+
+</button>
+
+</div>
+
+
+<button
+class="target"
+id="target"
+onclick="hitTarget()"
+type="button">
+
+⚡
+
+</button>
+
+</div>
+
+
+<div
+class="game-result"
+id="gameResult">
+</div>
+
+
+<button
+class="btn"
+id="gameNext"
+onclick="nextPage(4)"
+disabled
+style="opacity:.45">
+
+Lihat album 📸
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HALAMAN 4 ALBUM
+========================= -->
+
+<section
+class="page"
+id="page4">
+
+<div class="card">
+
+<div class="small">
+LITTLE ALBUM 📸
+</div>
+
+<div class="script">
+oke, sekarang sesi foto
+</div>
+
+<p>
+
+Karena isinya foto kamu semua,
+yaudah kita bikin album kecil 😭
+
+</p>
+
+
+<div class="album">
+
+<div class="photo">
+
+<img
+src="https://github.com/Priscalusiana/Musik/raw/46012bf45a0996859a93a3d1c2ab10d8d837d580/mangzil1.jpg.JPG"
+alt="Mangzil 1">
+
+<div class="caption">
+mode kalem 🤍
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://github.com/Priscalusiana/Musik/raw/46012bf45a0996859a93a3d1c2ab10d8d837d580/mangzil2.jpg.jpg"
+alt="Mangzil 2">
+
+<div class="caption">
+tetap semangat ✨
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://github.com/Priscalusiana/Musik/raw/46012bf45a0996859a93a3d1c2ab10d8d837d580/mangzil3.jpg.jpg"
+alt="Mangzil 3">
+
+<div class="caption">
+jangan kebanyakan ovt 😭
+</div>
+
+</div>
+
+
+<div class="photo">
+
+<img
+src="https://github.com/Priscalusiana/Musik/raw/46012bf45a0996859a93a3d1c2ab10d8d837d580/mangzil4.jpg.jpg"
+alt="Mangzil 4">
+
+<div class="caption">
+oke cukup pamer fotonya
+</div>
+
+</div>
+
+</div>
+
+
+<button
+class="btn"
+onclick="nextPage(5)">
+
+Masih ada satu lagi 👀
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HALAMAN 5
+========================= -->
+
+<section
+class="page"
+id="page5">
+
+<div class="card">
+
+<div class="small">
+SURAT RESMI
+</div>
+
+<div class="script">
+Ini penting. Harap dibaca.
+</div>
+
+
+<div class="permission">
+
+<div class="permission-title">
+SURAT IZIN RESMI 📄
+</div>
+
+
+<p style="text-align:center;font-size:13px;">
+
+Dengan ini, Mangzil diperbolehkan:
+
+</p>
+
+
+<div class="check">
+☑ istirahat kalau capek
+</div>
+
+<div class="check">
+☑ makan kalau lapar
+</div>
+
+<div class="check">
+☑ rebahan kalau sudah mumet
+</div>
+
+<div class="check">
+☑ cerita kalau lagi banyak pikiran
+</div>
+
+<div class="check">
+☑ nggak harus selalu produktif
+</div>
+
+
+<div class="warning">
+
+⚠️ <b>PERINGATAN</b>
+
+<br><br>
+
+Jangan sok kuat terus.
+Keliatan kok 😭
+
+</div>
+
+</div>
+
+
+<button
+class="btn"
+onclick="nextPage(6)">
+
+OKE, SAYA TERIMA 🤝
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HALAMAN 6 FINAL
+========================= -->
+
+<section
+class="page"
+id="page6">
+
+<div class="card final-card">
+
+<div class="small">
+SPECIAL MESSAGE 💌
+</div>
+
+
+<div class="heart">
+💚
+</div>
+
+
+<div class="script">
+Dari Lusi imut kiyut
+</div>
+
+
+<h1>
+untuk Mangzil 🤍
+</h1>
+
+
+<div class="greenflag">
+
+💚 GREEN FLAG EDITION 💚
+
+</div>
+
+
+<div class="final-box">
+
+<p>
+
+Oke, ini bagian terakhir.
+Jadi nggak usah panjang-panjang 😭
+
+</p>
+
+
+<p>
+
+Semangat terus buat semua kegiatan
+kamu nanti.
+
+</p>
+
+
+<p>
+
+Jangan lupa istirahat juga.
+Kamu nggak harus kuat terus
+setiap waktu.
+
+</p>
+
+
+<div class="quote">
+
+Kalau capek, istirahat.
+Kalau banyak pikiran, cerita.
+Nggak harus semuanya kamu simpan sendiri. 🤍
+
+</div>
+
+
+<p>
+
+Apalagi nanti kalau kamu udah
+balik ke Riau.
+
+</p>
+
+
+<p>
+
+Semoga perjalanan kamu lancar,
+kegiatannya dimudahkan,
+dan hari-hari kamu di sana
+berjalan dengan baik.
+
+</p>
+
+
+<p>
+
+Kalau suatu saat kamu lagi capek
+atau cuma butuh tempat buat cerita,
+
+<b>
+boleh cerita ke aku.
+</b>
+
+</p>
+
+
+<p>
+
+Nggak perlu nunggu sampai
+semuanya berantakan dulu kok 😭
+
+</p>
+
+
+<p>
+
+Intinya...
+
+<b>
+jaga diri baik-baik ya.
+</b>
+
+</p>
+
+
+<p>
+
+Sampai ketemu lagi nanti. 🤍
+
+</p>
+
+
+<div class="signature">
+
+— Lusi imut kiyut 💚
+
+</div>
+
+</div>
+
+
+<!-- GREEN FLAG METER -->
+
+<div class="green-meter">
+
+<div class="meter-title">
+status Mangzil hari ini:
+</div>
+
+<div class="meter-bar">
+
+<div class="meter-fill">
+</div>
+
+</div>
+
+<div class="meter-text">
+
+100% masih aman jadi manusia 😭💚
+
+</div>
+
+</div>
+
+
+<!-- SUDAH BACA -->
+
+<button
+class="btn"
+id="readBtn"
+onclick="alreadyRead()">
+
+Aku udah baca 🤍
+
+</button>
+
+
+<div
+id="readResult"
+class="read-result">
+</div>
+
+
+<!-- FITUR LUCU -->
+
+<div
+id="extraButtons"
+class="extra-buttons"
+style="display:none;">
+
+
+<button
+class="cute-btn"
+onclick="virtualHug()">
+
+🫂 Peluk virtual
+
+</button>
+
+
+<button
+class="cute-btn"
+onclick="thankYou()">
+
+🥹 Aku terharu
+
+</button>
+
+
+<button
+class="cute-btn"
+onclick="shareWhatsApp()">
+
+💚 Bagikan ke WhatsApp
+
+</button>
+
+
+</div>
+
+
+<div
+id="hugResult"
+class="hug-result">
+</div>
+
+
+<div class="last-note">
+
+kalau udah sampai sini...
+
+<br>
+
+makasih udah baca sampai habis 🥹
+
+</div>
+
+
+<button
+class="restart"
+onclick="nextPage(1)">
+
+↩️ ulang dari awal
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* =========================
+   MUSIK
+========================= */
+
+const music =
+document.getElementById("music");
+
+const playButton =
+document.getElementById("play");
+
+const continueButton =
+document.getElementById("continueBtn");
+
+const progress =
+document.getElementById("progress");
+
+
+music.loop=true;
+
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play()
+        .then(()=>{
+
+            playButton.innerHTML="⏸";
+
+            continueButton.disabled=false;
+
+            continueButton.style.opacity="1";
+
+        })
+        .catch(()=>{
+
+            alert(
+                "Klik tombol play sekali lagi ya 🤍"
+            );
+
+        });
+
+    }
+
+    else{
+
+        music.pause();
+
+        playButton.innerHTML="▶";
+
+    }
+
+}
+
+
+music.addEventListener(
+"timeupdate",
+()=>{
+
+    if(!music.duration)
+        return;
+
+    const percent =
+    music.currentTime /
+    music.duration *
+    100;
+
+    progress.style.width =
+    percent+"%";
+
+});
+
+
+music.addEventListener(
+"play",
+()=>{
+
+    playButton.innerHTML="⏸";
+
+});
+
+
+music.addEventListener(
+"pause",
+()=>{
+
+    playButton.innerHTML="▶";
+
+});
+
+
+/* =========================
+   PINDAH HALAMAN
+========================= */
+
+function nextPage(number){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(page=>{
+
+        page.classList.remove("active");
+
+    });
+
+
+    document
+    .getElementById(
+        "page"+number
+    )
+    .classList.add("active");
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =========================
+   PILIHAN LUCU
+========================= */
+
+function answer(type){
+
+    const result =
+    document.getElementById(
+        "choiceResult"
+    );
+
+
+    if(type==="A"){
+
+        result.innerHTML =
+        "☕ 'santai kok' katanya... padahal tab browsernya 27 😭";
+
+    }
+
+    else if(type==="B"){
+
+        result.innerHTML =
+        "📱 multitasking level dewa. HP aja capek liatnya 😭";
+
+    }
+
+    else if(type==="C"){
+
+        result.innerHTML =
+        "😭 'sebentar lagi' adalah sebuah konsep, bukan waktu.";
+
+    }
+
+    else if(type==="D"){
+
+        result.innerHTML =
+        "💀 jam 10 malam: 'loh kok udah malam?'";
+
+    }
+
+    else if(type==="E"){
+
+        result.innerHTML =
+        "🫠 produktifnya nanti, yang penting buka laptop dulu.";
+
+    }
+
+    else if(type==="F"){
+
+        result.innerHTML =
+        "🛌 badan rebahan, pikiran malah meeting sendiri.";
+
+    }
+
+    else if(type==="G"){
+
+        result.innerHTML =
+        "🤡 'nanti aja' → tau-tau sudah ganti hari.";
+
+    }
+
+    else if(type==="H"){
+
+        result.innerHTML =
+        "🧠 loading... 12% ... 12% ... tetap 12% 😭";
+
+    }
+
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+let score=0;
+
+let combo=0;
+
+let time=15;
+
+let running=false;
+
+let gameInterval;
+
+let moveInterval;
+
+
+const game =
+document.getElementById("game");
+
+const target =
+document.getElementById("target");
+
+const gameStart =
+document.getElementById("gameStart");
+
+const scoreText =
+document.getElementById("score");
+
+const timeText =
+document.getElementById("time");
+
+const comboText =
+document.getElementById("combo");
+
+const gameResult =
+document.getElementById("gameResult");
+
+const gameNext =
+document.getElementById("gameNext");
+
+
+/* KECEPATAN GAME */
+
+function getSpeed(){
+
+    if(score < 5){
+
+        return 1500;
+
+    }
+
+    if(score < 10){
+
+        return 1250;
+
+    }
+
+    return 1000;
+
+}
+
+
+/* START GAME */
+
+function startGame(){
+
+    score=0;
+
+    combo=0;
+
+    time=15;
+
+    running=true;
+
+
+    scoreText.innerHTML=score;
+
+    comboText.innerHTML=combo;
+
+    timeText.innerHTML=time;
+
+    gameResult.innerHTML="";
+
+
+    gameStart.style.display="none";
+
+    target.style.display="flex";
+
+
+    moveTarget();
+
+
+    clearInterval(gameInterval);
+
+    clearInterval(moveInterval);
+
+
+    gameInterval =
+    setInterval(()=>{
+
+        time--;
+
+        timeText.innerHTML=time;
+
+
+        if(time<=0){
+
+            finishGame();
+
+        }
+
+    },1000);
+
+
+    startMoving();
+
+}
+
+
+/* PINDAH TARGET */
+
+function startMoving(){
+
+    clearInterval(moveInterval);
+
+
+    moveInterval =
+    setInterval(()=>{
+
+        if(running){
+
+            moveTarget();
+
+        }
+
+    },getSpeed());
+
+}
+
+
+/* POSISI TARGET */
+
+function moveTarget(){
+
+    const maxX =
+    Math.max(
+        10,
+        game.clientWidth - 75
+    );
+
+    const maxY =
+    Math.max(
+        80,
+        game.clientHeight - 85
+    );
+
+
+    const x =
+    10 +
+    Math.random() *
+    (maxX - 10);
+
+
+    const y =
+    65 +
+    Math.random() *
+    (maxY - 65);
+
+
+    target.style.left =
+    x+"px";
+
+    target.style.top =
+    y+"px";
+
+
+    const emojis = [
+
+        "⚡",
+        "💙",
+        "🤍",
+        "✨",
+        "🌸",
+        "🔥",
+        "⭐",
+        "☕",
+        "🍜",
+        "😭",
+        "🫠",
+        "💀",
+        "🧸",
+        "🍪",
+        "🎀"
+
+    ];
+
+
+    target.innerHTML =
+    emojis[
+        Math.floor(
+            Math.random() *
+            emojis.length
+        )
+    ];
+
+}
+
+
+/* KLIK TARGET */
+
+function hitTarget(){
+
+    if(!running){
+
+        return;
+
+    }
+
+
+    score++;
+
+    combo++;
+
+
+    scoreText.innerHTML =
+    score;
+
+    comboText.innerHTML =
+    combo;
+
+
+    target.style.transform =
+    "scale(.7)";
+
+
+    setTimeout(()=>{
+
+        if(running){
+
+            target.style.transform="";
+
+        }
+
+    },150);
+
+
+    setTimeout(()=>{
+
+        if(running){
+
+            moveTarget();
+
+        }
+
+    },180);
+
+
+    startMoving();
+
+
+    if(score % 5 === 0){
+
+        miniConfetti();
+
+    }
+
+
+    if(score >= 15){
+
+        winGame();
+
+    }
+
+}
+
+
+/* GAME SELESAI */
+
+function finishGame(){
+
+    running=false;
+
+
+    clearInterval(gameInterval);
+
+    clearInterval(moveInterval);
+
+
+    target.style.display="none";
+
+
+    if(score>=10){
+
+        gameResult.innerHTML =
+        "Lumayan banget 😭🔥 Score: "+score;
+
+    }
+
+    else{
+
+        gameResult.innerHTML =
+        "Santai, yang penting sudah mencoba 😭 Score: "+score;
+
+    }
+
+
+    gameStart.style.display="flex";
+
+
+    gameStart.innerHTML=`
+
+        <div class="emoji">
+
+        ${score>=10 ? "🔥" : "😭"}
+
+        </div>
+
+        <h3>
+
+        ${score>=10
+        ? "Gokil juga kamu."
+        : "Coba lagi nggak?"}
+
+        </h3>
+
+        <p>
+
+        Score kamu: ${score}
+
+        </p>
+
+        <button onclick="startGame()">
+
+        MAIN LAGI 🎮
+
+        </button>
+
+    `;
+
+
+    if(score>=7){
+
+        gameNext.disabled=false;
+
+        gameNext.style.opacity="1";
+
+    }
+
+}
+
+
+/* MENANG */
+
+function winGame(){
+
+    running=false;
+
+
+    clearInterval(gameInterval);
+
+    clearInterval(moveInterval);
+
+
+    target.style.display="none";
+
+
+    gameResult.innerHTML =
+    "15 POIN! Oke, refleks kamu aman 😭🔥";
+
+
+    gameNext.disabled=false;
+
+    gameNext.style.opacity="1";
+
+
+    confetti();
+
+}
+
+
+/* =========================
+   MINI CONFETTI
+========================= */
+
+function miniConfetti(){
+
+    const symbols=[
+
+        "✨",
+        "💙",
+        "🤍",
+        "⭐"
+
+    ];
+
+
+    for(let i=0;i<8;i++){
+
+        const item =
+        document.createElement("div");
+
+
+        item.className =
+        "confetti";
+
+
+        item.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+
+        item.style.left =
+        (30 + Math.random()*40)
+        +"vw";
+
+
+        item.style.animationDuration =
+        "1.5s";
+
+
+        document.body.appendChild(item);
+
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },1800);
+
+    }
+
+}
+
+
+/* =========================
+   SUDAH BACA
+========================= */
+
+function alreadyRead(){
+
+    const result =
+    document.getElementById(
+        "readResult"
+    );
+
+    const extra =
+    document.getElementById(
+        "extraButtons"
+    );
+
+    const button =
+    document.getElementById(
+        "readBtn"
+    );
+
+
+    result.innerHTML =
+    "Oke, pesan sudah resmi dibaca 👀💚";
+
+
+    button.innerHTML =
+    "✓ Sudah dibaca";
+
+
+    button.style.background =
+    "#69aa78";
+
+
+    extra.style.display =
+    "flex";
+
+
+    confetti();
+
+}
+
+
+/* =========================
+   PELUK VIRTUAL
+========================= */
+
+function virtualHug(){
+
+    const result =
+    document.getElementById(
+        "hugResult"
+    );
+
+
+    result.innerHTML =
+    "🫂 *peluk virtual dikirim* — jangan kabur dulu 😭💚";
+
+
+    miniConfetti();
+
+}
+
+
+/* =========================
+   TERHARU
+========================= */
+
+function thankYou(){
+
+    const result =
+    document.getElementById(
+        "hugResult"
+    );
+
+
+    result.innerHTML =
+    "😭 jangan bikin Lusi ikut terharu dong...";
+
+
+    confetti();
+
+}
+
+
+/* =========================
+   BAGIKAN KE WHATSAPP
+========================= */
+
+function shareWhatsApp(){
+
+    const pesan =
+`Aku baru selesai baca sesuatu yang lucu tapi ternyata bikin terharu 😭💚
+
+Makasih ya, Lus. Aku udah baca semuanya sampai habis 🤍
+
+Nanti kalau udah sampai Riau aku kabarin ya.
+
+— Mangzil`;
+
+
+    const url =
+    "https://wa.me/?text=" +
+    encodeURIComponent(pesan);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function confetti(){
+
+    const symbols=[
+
+        "🤍",
+        "💙",
+        "✨",
+        "🌸",
+        "⭐",
+        "💫",
+        "♡",
+        "💚"
+
+    ];
+
+
+    for(let i=0;i<60;i++){
+
+        const item =
+        document.createElement("div");
+
+
+        item.className =
+        "confetti";
+
+
+        item.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+
+        item.style.left =
+        Math.random()*100+"vw";
+
+
+        item.style.animationDelay =
+        Math.random()*1.2+"s";
+
+
+        document.body.appendChild(item);
+
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },4000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

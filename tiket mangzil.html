@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Mangzil 💙</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        #ffffff 0,
+        transparent 25%
+    ),
+    linear-gradient(
+        135deg,
+        #fff7f1,
+        #f9e7df
+    );
+
+    font-family:Arial,sans-serif;
+    color:#173b58;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HALAMAN
+========================= */
+
+.page{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:25px 16px;
+}
+
+.page.active{
+    display:flex;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    width:100%;
+    max-width:430px;
+
+    background:rgba(247,249,250,.96);
+
+    border-radius:27px;
+
+    padding:34px 25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 60px rgba(60,70,80,.13);
+
+    animation:appear .7s ease;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.script{
+    font-size:27px;
+    font-weight:bold;
+    font-style:italic;
+    margin:10px;
+}
+
+.small{
+    font-size:12px;
+    letter-spacing:3px;
+    color:#71858f;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:35px;
+    line-height:1.25;
+    margin:15px 0;
+}
+
+h2{
+    font-size:28px;
+    line-height:1.3;
+}
+
+p{
+    color:#687982;
+    line-height:1.6;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-box{
+
+    margin:25px auto 8px;
+
+    background:#e8f3fa;
+
+    border-radius:19px;
+
+    padding:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-align:left;
+
+    border:1px solid #d6e9f3;
+}
+
+
+.music-icon{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    background:#4b9bd0;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+
+    flex-shrink:0;
+}
+
+
+.music-info{
+    flex:1;
+    min-width:0;
+}
+
+
+.music-info b{
+    display:block;
+    font-size:14px;
+}
+
+
+.music-info span{
+    display:block;
+    font-size:11px;
+    color:#78909c;
+    margin-top:3px;
+}
+
+
+.play-btn{
+
+    border:none;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#3d8fc7;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.08);
+
+    flex-shrink:0;
+
+}
+
+
+.play-btn:hover{
+    transform:scale(1.05);
+}
+
+
+.music-playing{
+
+    animation:
+    musicPulse 1s infinite;
+
+}
+
+
+@keyframes musicPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+
+.hint{
+
+    font-size:12px;
+
+    color:#8999a1;
+
+    margin-top:10px;
+
+}
+
+
+/* =========================
+   AMPLOP
+========================= */
+
+.envelope{
+
+    width:220px;
+    height:150px;
+
+    margin:30px auto;
+
+    background:white;
+
+    position:relative;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.13);
+
+    overflow:hidden;
+
+}
+
+
+.envelope:after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+    110px solid transparent;
+
+    border-right:
+    110px solid transparent;
+
+    border-bottom:
+    85px solid #fafafa;
+
+}
+
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+    110px solid transparent;
+
+    border-right:
+    110px solid transparent;
+
+    border-top:
+    90px solid #eeeeee;
+
+    transform-origin:top;
+
+    transition:.7s;
+
+    z-index:3;
+
+}
+
+
+.envelope.open .flap{
+
+    transform:
+    rotateX(180deg);
+
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+.btn{
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:14px 25px;
+
+    background:#4b9bd0;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin:6px;
+
+    box-shadow:
+    0 8px 20px
+    rgba(75,155,208,.2);
+
+}
+
+
+.btn:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+.btn.secondary{
+
+    background:white;
+
+    color:#526772;
+
+    border:
+    1px solid #dce3e7;
+
+    box-shadow:none;
+
+}
+
+
+/* =========================
+   TOMBOL GA AH
+========================= */
+
+#noBtn{
+
+    transition:
+    transform .18s ease;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input,
+textarea{
+
+    width:100%;
+
+    border:
+    1px solid #d9e1e5;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:14px;
+
+    font-family:inherit;
+
+    font-size:14px;
+
+    outline:none;
+
+    margin:7px 0;
+
+}
+
+
+textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+
+/* =========================
+   PILIHAN
+========================= */
+
+.options{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+
+    margin:18px 0;
+
+}
+
+
+.option{
+
+    background:white;
+
+    border:
+    1px solid #dfe7ea;
+
+    border-radius:17px;
+
+    padding:14px 7px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+
+.option:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+.option.selected{
+
+    background:#4b9bd0;
+
+    border-color:#4b9bd0;
+
+    color:white;
+
+}
+
+
+/* =========================
+   TIKET
+========================= */
+
+.ticket{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8fbfc,
+        #edf4f7
+    );
+
+    border-radius:23px;
+
+    padding:22px;
+
+    text-align:left;
+
+    box-shadow:
+    0 12px 35px
+    rgba(50,70,80,.10);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.ticket:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#dcecf5;
+
+    right:-50px;
+    top:-50px;
+
+}
+
+
+.ticket:after{
+
+    content:"♥";
+
+    position:absolute;
+
+    right:22px;
+    top:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#fff5ef;
+
+    border:
+    2px solid #e7cfc4;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#e58c9b;
+
+    font-size:25px;
+
+}
+
+
+.admit{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#6e818b;
+
+    font-weight:bold;
+
+}
+
+
+.ticket-title{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    font-style:italic;
+
+    margin:
+    7px 0 25px;
+
+}
+
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+.avatar{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #b8dced,
+        #f7dcd5
+    );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+
+}
+
+
+.profile small{
+
+    display:block;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:#81919a;
+
+}
+
+
+.profile strong{
+
+    font-size:19px;
+
+    font-style:italic;
+
+}
+
+
+.info-row{
+
+    display:flex;
+
+    gap:12px;
+
+    padding:12px 0;
+
+    border-bottom:
+    1px dashed #cfdadd;
+
+}
+
+
+.info-icon{
+
+    width:34px;
+    height:34px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#e4f1f7;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+.info-label{
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    color:#7a8b93;
+
+    font-weight:bold;
+
+}
+
+
+.info-value{
+
+    margin-top:3px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+.ticket-message{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    word-break:break-word;
+
+}
+
+
+.ticket-footer{
+
+    text-align:center;
+
+    padding-top:22px;
+
+    color:#536b78;
+
+    line-height:1.7;
+
+    font-style:italic;
+
+}
+
+
+.from{
+
+    margin-top:10px;
+
+    color:#4b80a0;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.share-text{
+
+    font-size:12px;
+
+    color:#819097;
+
+    margin:
+    20px 0 7px;
+
+}
+
+
+.final-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:3px;
+
+}
+
+
+.bouquet{
+
+    margin-top:14px;
+
+}
+
+
+.reset{
+
+    margin-top:13px;
+
+    color:#71858e;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   KEMBALI KE TIKET
+========================= */
+
+.back-ticket{
+
+    margin-top:14px;
+
+    font-size:12px;
+
+    color:#71858e;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.back-ticket:hover{
+
+    color:#4b9bd0;
+
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    font-size:20px;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    animation:
+    fall 3s linear forwards;
+
+}
+
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ===== LUCU EDITION ADD-ONS ===== */
+
+#topProgress{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:rgba(255,255,255,.45);
+    z-index:10000;
+}
+#topProgress span{
+    display:block;
+    width:12.5%;
+    height:100%;
+    background:#4b9bd0;
+    border-radius:0 10px 10px 0;
+    transition:width .45s ease;
+}
+.fun-badge{
+    display:inline-block;
+    margin:7px 3px;
+    padding:7px 11px;
+    border-radius:20px;
+    background:#fff;
+    border:1px solid #dce7eb;
+    color:#68808c;
+    font-size:11px;
+    cursor:pointer;
+    transition:.2s;
+}
+.fun-badge:hover{transform:translateY(-2px) rotate(-1deg);}
+.fun-result{
+    min-height:34px;
+    margin-top:10px;
+    padding:10px;
+    border-radius:15px;
+    background:#f8fbfc;
+    color:#66808d;
+    font-size:12px;
+    line-height:1.5;
+}
+.secret-box{
+    margin-top:18px;
+    padding:16px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#fff,#eef8fc);
+    border:1px dashed #cbdfe7;
+}
+.stamp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:75px;
+    height:75px;
+    border:3px dashed #76a4b9;
+    border-radius:50%;
+    color:#5c8295;
+    font-size:10px;
+    font-weight:bold;
+    transform:rotate(-8deg);
+    margin:8px;
+}
+.stamp.done{
+    border-color:#6daa7b;
+    color:#579168;
+    transform:rotate(5deg) scale(1.05);
+}
+.lucky{
+    font-size:13px;
+    line-height:1.6;
+    color:#5f7885;
+    min-height:45px;
+}
+.mini-note{
+    font-size:10px;
+    color:#94a2a8;
+    margin-top:7px;
+}
+.click-heart{
+    position:fixed;
+    pointer-events:none;
+    z-index:10001;
+    font-size:20px;
+    animation:heartPop 1s ease forwards;
+}
+@keyframes heartPop{
+    0%{opacity:0;transform:translate(-50%,-20%) scale(.5);}
+    20%{opacity:1;}
+    100%{opacity:0;transform:translate(-50%,-130px) scale(1.35) rotate(15deg);}
+}
+.shake{
+    animation:shake .35s ease;
+}
+@keyframes shake{
+    25%{transform:translateX(-5px);}
+    50%{transform:translateX(5px);}
+    75%{transform:translateX(-3px);}
+}
+</style>
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="topProgress"><span></span></div>
+
+
+
+<!-- =========================
+     MUSIK
+========================= -->
+
+<audio
+    id="music"
+    loop>
+
+    <source
+        src="https://raw.githubusercontent.com/Priscalusiana/Musik/46012bf45a0996859a93a3d1c2ab10d8d837d580/kesima.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- =========================
+     HALAMAN 1
+========================= -->
+
+<section
+    class="page active"
+    id="page1">
+
+<div class="card">
+
+
+    <div class="small">
+        Tiket Resmi
+    </div>
+
+
+    <div class="script">
+        buat Mangzil greenflag 💚
+    </div>
+
+
+    <p>
+
+        Sebelum buka...
+
+        <br>
+
+        <b>
+            putar lagunya dulu ya 🎧
+        </b>
+
+    </p>
+
+
+
+    <!-- MUSIC PLAYER -->
+
+    <div class="music-box">
+
+
+        <div class="music-icon">
+            🎵
+        </div>
+
+
+        <div class="music-info">
+
+            <b>
+                Kesima
+            </b>
+
+            <span>
+                Weswey • buat Mangzil 💙
+            </span>
+
+        </div>
+
+
+        <button
+            class="play-btn"
+            id="playBtn"
+            onclick="startGift()">
+
+            ▶
+
+        </button>
+
+
+    </div>
+
+
+    <div
+        class="hint"
+        id="musicHint">
+
+        Klik ▶ dulu yaa 🥺
+
+    </div>
+
+
+
+    <!-- AMPLOP -->
+
+    <div
+        id="envelopeArea"
+        class="hidden">
+
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()">
+
+            <div class="flap"></div>
+
+        </div>
+
+
+        <p>
+
+            Ada sesuatu buat kamu 💙
+
+            <br>
+
+            <b>
+                Tap amplopnya buat buka.
+            </b>
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 2
+========================= -->
+
+<section
+    class="page"
+    id="page2">
+
+<div class="card">
+
+
+    <div class="script">
+        buat Mangzil
+    </div>
+
+
+    <h1>
+
+        Mau nggak kamu
+
+        <br>
+
+        main bareng aku?
+
+    </h1>
+
+
+    <p>
+
+        eh, jangan pura-pura sibuk ya 😭
+
+    </p>
+
+    <div class="secret-box">
+        <b style="font-size:12px;color:#587685;">fitur tidak penting tapi wajib dicoba 😭</b>
+        <br>
+        <button class="fun-badge" onclick="randomExcuse()">🎲 cari alasan random</button>
+        <button class="fun-badge" onclick="checkGreenFlag()">💚 cek green flag</button>
+        <div id="funResult2" class="fun-result">Klik salah satu. Jangan serius-serius, ini bukan ujian 😭</div>
+    </div>
+
+
+
+    <br>
+
+
+    <button
+        class="btn"
+        onclick="nextPage(3)">
+
+        MAU BANGET! 💙
+
+    </button>
+
+
+    <button
+        class="btn secondary"
+        id="noBtn"
+        onclick="nope()">
+
+        ga ah
+
+    </button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 3
+========================= -->
+
+<section
+    class="page"
+    id="page3">
+
+<div class="card">
+
+
+    <div class="script">
+        tentuin dulu
+    </div>
+
+
+    <h2>
+        Kapan kita main?
+    </h2>
+
+
+    <input
+        type="date"
+        id="date">
+
+
+    <div class="options">
+
+
+        <div
+            class="option"
+            onclick="pick(this,'time','Pagi')">
+
+            🌤️
+            <br>
+            Pagi
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'time','Siang')">
+
+            ☀️
+            <br>
+            Siang
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'time','Sore')">
+
+            🌇
+            <br>
+            Sore
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'time','Malam')">
+
+            🌙
+            <br>
+            Malam
+
+        </div>
+
+
+    </div>
+
+
+    <input
+        type="time"
+        id="clock"
+        value="15:00">
+
+
+    <button
+        class="btn"
+        onclick="nextPage(4)">
+
+        Lanjut →
+
+    </button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 4
+========================= -->
+
+<section
+    class="page"
+    id="page4">
+
+<div class="card">
+
+
+    <div class="script">
+        rencana kita
+    </div>
+
+
+    <h2>
+        Nanti kita ngapain, Zil?
+    </h2>
+
+
+    <div class="options">
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Makan bareng 🍜')">
+
+            🍜
+            <br>
+            Makan bareng
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Ngopi ☕')">
+
+            ☕
+            <br>
+            Ngopi
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Nonton 🎬')">
+
+            🎬
+            <br>
+            Nonton
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Jalan sore 🚶')">
+
+            🚶
+            <br>
+            Jalan sore
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Piknik 🧺')">
+
+            🧺
+            <br>
+            Piknik
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Main 🎮')">
+
+            🎮
+            <br>
+            Main
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Belanja 🛍️')">
+
+            🛍️
+            <br>
+            Belanja
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'activity','Mager 🛋️')">
+
+            🛋️
+            <br>
+            Mager
+
+        </div>
+
+
+    </div>
+
+
+    <input
+        id="customActivity"
+        placeholder="atau tulis ide kamu...">
+
+
+    <button
+        class="btn"
+        onclick="saveActivity()">
+
+        Oke →
+
+    </button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 5
+========================= -->
+
+<section
+    class="page"
+    id="page5">
+
+<div class="card">
+
+
+    <div class="script">
+        biar makin niat
+    </div>
+
+
+    <h2>
+        Dress code-nya?
+    </h2>
+
+
+    <div class="options">
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Santai aja')">
+
+            Santai aja
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Cutesy / imut')">
+
+            Cutesy / imut 💕
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Rapi / formal')">
+
+            Rapi / formal
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Couple-an')">
+
+            Couple-an 💙
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Satu warna')">
+
+            Satu warna
+
+        </div>
+
+
+        <div
+            class="option"
+            onclick="pick(this,'dress','Bebas 😎')">
+
+            Bebas 😎
+
+        </div>
+
+
+    </div>
+
+
+    <input
+        id="customDress"
+        placeholder="atau tulis sendiri...">
+
+
+    <button
+        class="btn"
+        onclick="saveDress()">
+
+        Lanjut →
+
+    </button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 6
+========================= -->
+
+<section
+    class="page"
+    id="page6">
+
+<div class="card">
+
+
+    <div class="script">
+        terakhir
+    </div>
+
+
+    <h2>
+        Ada pesan buat Mangzil?
+    </h2>
+
+
+    <textarea
+        id="message"
+        placeholder="Tulis pesan kamu di sini..."></textarea>
+
+
+    <button
+        class="btn"
+        onclick="makeTicket()">
+
+        Bikin tiketnya 🎟️
+
+    </button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 7
+========================= -->
+
+<section
+    class="page"
+    id="page7">
+
+<div class="card">
+
+
+    <div class="ticket">
+
+
+        <div class="admit">
+            ADMIT TWO
+        </div>
+
+
+        <div class="ticket-title">
+            Tiket Main Bareng
+        </div>
+
+
+        <!-- UNTUK -->
+
+        <div class="profile">
+
+
+            <div class="avatar">
+                🧑🏻
+            </div>
+
+
+            <div>
+
+                <small>
+                    UNTUK
+                </small>
+
+                <strong>
+                    Mangzil
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- KAPAN -->
+
+        <div class="info-row">
+
+
+            <div class="info-icon">
+                💙
+            </div>
+
+
+            <div>
+
+                <div class="info-label">
+                    KAPAN
+                </div>
+
+
+                <div
+                    class="info-value"
+                    id="ticketDate">
+
+                    -
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ACARA -->
+
+        <div class="info-row">
+
+
+            <div class="info-icon">
+                🛍️
+            </div>
+
+
+            <div>
+
+                <div class="info-label">
+                    ACARA
+                </div>
+
+
+                <div
+                    class="info-value"
+                    id="ticketActivity">
+
+                    -
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- DRESS -->
+
+        <div class="info-row">
+
+
+            <div class="info-icon">
+                💙
+            </div>
+
+
+            <div>
+
+                <div class="info-label">
+                    DRESS CODE
+                </div>
+
+
+                <div
+                    class="info-value"
+                    id="ticketDress">
+
+                    -
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PESAN -->
+
+        <div class="info-row">
+
+
+            <div class="info-icon">
+                💌
+            </div>
+
+
+            <div>
+
+                <div class="info-label">
+                    PESAN
+                </div>
+
+
+                <div
+                    class="ticket-message"
+                    id="ticketMessage">
+
+                    -
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PENUTUP -->
+
+        <div class="ticket-footer">
+
+            Yeay, akhirnya jadi main bareng 💙
+
+            <br>
+
+            jangan lupa datang ya Mangzil,
+            jangan PHP 😭
+
+            <div class="from">
+
+                dari lusi imut, buat Mangzil greenflag 💚
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="share-text">
+
+        Bagikan tiketnya ke Mangzil ya 🎟️
+
+    </div>
+
+    <div class="secret-box">
+        <div class="stamp" id="stamp">NOT<br>YET<br>VERIFIED</div>
+        <div style="display:inline-block;vertical-align:top;margin-top:13px;text-align:left;">
+            <b style="font-size:12px;">Tiket sudah dicek? 👀</b>
+            <div class="mini-note">Klik cap biar tiketnya resmi.</div>
+            <button class="fun-badge" onclick="verifyTicket()">🔖 sahkan tiket</button>
+        </div>
+        <div id="stampResult" class="fun-result">Status: masih berupa rencana 😭</div>
+    </div>
+
+
+
+
+    <div class="final-buttons">
+
+
+        <button
+            class="btn"
+            onclick="shareTicket()">
+
+            Bagikan tiket 🎟️
+
+        </button>
+
+
+        <button
+            class="btn secondary"
+            onclick="whatsapp()">
+
+            Chat WhatsApp
+
+        </button>
+
+
+    </div>
+
+
+
+    <div class="bouquet">
+
+
+        <button
+            class="btn"
+            onclick="nextPage(8)">
+
+            Lanjut ke bouquet 💐
+
+        </button>
+
+
+    </div>
+
+
+    <div
+        class="reset"
+        onclick="location.reload()">
+
+        Ulang dari awal
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     HALAMAN 8
+========================= -->
+
+<section
+    class="page"
+    id="page8">
+
+<div class="card">
+
+
+    <div class="script">
+        special delivery 💐
+    </div>
+
+
+    <h1>
+        Buat Mangzil 💙
+    </h1>
+
+
+    <div
+        style="
+        font-size:70px;
+        margin:20px;
+        ">
+
+        💐
+
+    </div>
+
+
+    <p>
+
+        Karena main bareng tanpa bunga
+        rasanya kurang lengkap hehe.
+
+    </p>
+
+
+    <p>
+
+        Semoga hari kita nanti
+        seru banget ya ✨
+
+    </p>
+
+
+    
+<div class="secret-box">
+
+    <div id="flowerDisplay" style="font-size:62px;margin:4px 0 12px;">
+        💐
+    </div>
+
+    <div id="flowerText" class="lucky">
+        Buketnya masih mode preview 😭
+    </div>
+
+    <button class="fun-badge" onclick="openFlowers()">🌷 buka bunganya</button>
+    <button class="fun-badge" onclick="luckyMessage()">🔮 cek keberuntungan</button>
+    <button class="fun-badge" onclick="sendSecret()">💌 kirim pesan rahasia</button>
+
+    <div id="luckyResult" class="fun-result">
+        Ramalan hari ini: kemungkinan ketawa cukup tinggi.
+    </div>
+
+</div>
+
+
+
+    <!-- KEMBALI KE TIKET -->
+
+    <div
+        class="back-ticket"
+        onclick="nextPage(7)">
+
+        ← Kembali ke tiket
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================
+   DATA
+========================= */
+
+let data = {
+
+    time:"",
+    activity:"",
+    dress:""
+
+};
+
+
+
+/* =========================
+   PINDAH HALAMAN
+========================= */
+
+function nextPage(number){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+
+    document
+    .getElementById(
+        "page" + number
+    )
+    .classList.add("active");
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+
+/* =========================
+   PLAY MUSIK
+========================= */
+
+function startGift(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("playBtn");
+
+    const envelope =
+        document.getElementById("envelopeArea");
+
+    const hint =
+        document.getElementById("musicHint");
+
+
+    if(music.paused){
+
+        music.play()
+
+        .then(function(){
+
+            button.innerHTML = "⏸";
+
+            button.classList.add(
+                "music-playing"
+            );
+
+            hint.innerHTML =
+                "Musiknya sudah jalan 🎵💙";
+
+            envelope.classList.remove(
+                "hidden"
+            );
+
+        })
+
+        .catch(function(){
+
+            alert(
+                "Klik tombol ▶ sekali lagi yaa 💙"
+            );
+
+        });
+
+    }
+
+    else{
+
+        music.pause();
+
+        button.innerHTML = "▶";
+
+        button.classList.remove(
+            "music-playing"
+        );
+
+        hint.innerHTML =
+            "Musiknya dijeda 🎵";
+
+    }
+
+}
+
+
+
+/* =========================
+   BUKA AMPLOP
+========================= */
+
+function openEnvelope(){
+
+    document
+    .getElementById("envelope")
+    .classList.add("open");
+
+
+    setTimeout(function(){
+
+        nextPage(2);
+
+    },700);
+
+}
+
+
+
+/* =========================
+   TOMBOL GA AH
+   SELALU LARI
+========================= */
+
+function nope(){
+
+    const button =
+        document.getElementById("noBtn");
+
+
+    const randomX =
+        Math.floor(
+            Math.random() * 240
+        ) - 120;
+
+
+    const randomY =
+        Math.floor(
+            Math.random() * 160
+        ) - 80;
+
+
+    button.style.transform =
+
+        `translate(
+            ${randomX}px,
+            ${randomY}px
+        )`;
+
+
+    button.innerHTML =
+        "ga ah 😜";
+
+}
+
+
+
+/* =========================
+   PILIHAN
+========================= */
+
+function pick(
+    element,
+    key,
+    value
+){
+
+    element
+    .parentElement
+    .querySelectorAll(".option")
+    .forEach(function(option){
+
+        option.classList.remove(
+            "selected"
+        );
+
+    });
+
+
+    element.classList.add(
+        "selected"
+    );
+
+
+    data[key] = value;
+
+}
+
+
+
+/* =========================
+   ACTIVITY
+========================= */
+
+function saveActivity(){
+
+    const custom =
+        document
+        .getElementById(
+            "customActivity"
+        )
+        .value
+        .trim();
+
+
+    if(custom){
+
+        data.activity = custom;
+
+    }
+
+
+    nextPage(5);
+
+}
+
+
+
+/* =========================
+   DRESS
+========================= */
+
+function saveDress(){
+
+    const custom =
+        document
+        .getElementById(
+            "customDress"
+        )
+        .value
+        .trim();
+
+
+    if(custom){
+
+        data.dress = custom;
+
+    }
+
+
+    nextPage(6);
+
+}
+
+
+
+/* =========================
+   BUAT TIKET
+========================= */
+
+function makeTicket(){
+
+    const date =
+        document
+        .getElementById("date")
+        .value;
+
+
+    const time =
+        document
+        .getElementById("clock")
+        .value;
+
+
+    let dateText =
+        "Tanggal belum dipilih";
+
+
+    if(date){
+
+        const parts =
+            date.split("-");
+
+
+        const year =
+            Number(parts[0]);
+
+        const month =
+            Number(parts[1]);
+
+        const day =
+            Number(parts[2]);
+
+
+        const d =
+            new Date(
+                Date.UTC(
+                    year,
+                    month - 1,
+                    day
+                )
+            );
+
+
+        dateText =
+            d.toLocaleDateString(
+                "id-ID",
+                {
+                    weekday:"long",
+                    day:"numeric",
+                    month:"long",
+                    year:"numeric",
+                    timeZone:"UTC"
+                }
+            );
+
+    }
+
+
+    document
+    .getElementById(
+        "ticketDate"
+    )
+    .innerHTML =
+
+        dateText +
+        " · " +
+        (data.time || "Bebas") +
+        " · " +
+        (time || "Bebas");
+
+
+    document
+    .getElementById(
+        "ticketActivity"
+    )
+    .innerHTML =
+
+        data.activity ||
+        "Terserah, yang penting bareng 😆";
+
+
+    document
+    .getElementById(
+        "ticketDress"
+    )
+    .innerHTML =
+
+        data.dress ||
+        "Bebas 😎";
+
+
+    document
+    .getElementById(
+        "ticketMessage"
+    )
+    .innerHTML =
+
+        document
+        .getElementById(
+            "message"
+        )
+        .value ||
+
+        "JANGAN BATAL YA!!! 😭";
+
+
+    nextPage(7);
+
+
+    confetti();
+
+}
+
+
+
+/* =========================
+   SHARE
+========================= */
+
+async function shareTicket(){
+
+    const text =
+
+`🎟️ TIKET MAIN BARENG MANGZIL 💙
+
+Kapan:
+${document.getElementById("ticketDate").innerText}
+
+Acara:
+${document.getElementById("ticketActivity").innerText}
+
+Dress code:
+${document.getElementById("ticketDress").innerText}
+
+Pesan:
+${document.getElementById("ticketMessage").innerText}
+
+Jangan lupa datang yaa 😭💙`;
+
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share({
+
+                title:
+                "Tiket Main Bareng 💙",
+
+                text:text
+
+            });
+
+        }
+
+        catch(error){}
+
+    }
+
+    else{
+
+        navigator.clipboard
+        .writeText(text)
+        .then(function(){
+
+            alert(
+                "Tiket berhasil disalin 💙"
+            );
+
+        });
+
+    }
+
+}
+
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function whatsapp(){
+
+    const message =
+
+`Hai Mangzil 💙
+
+Aku punya tiket main bareng buat kamu 🎟️
+
+Kapan:
+${document.getElementById("ticketDate").innerText}
+
+Acara:
+${document.getElementById("ticketActivity").innerText}
+
+Dress code:
+${document.getElementById("ticketDress").innerText}
+
+Pesan:
+${document.getElementById("ticketMessage").innerText}
+
+Jangan lupa datang yaa 😭💙`;
+
+
+    const url =
+
+        "https://wa.me/?text=" +
+
+        encodeURIComponent(
+            message
+        );
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function confetti(){
+
+    const symbols = [
+
+        "💙",
+        "✨",
+        "🎉",
+        "💫",
+        "💕",
+        "🌸",
+        "⭐"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<60;
+        i++
+    ){
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "confetti";
+
+
+        item.innerHTML =
+
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.left =
+
+            Math.random() *
+            100 +
+
+            "vw";
+
+
+        item.style.animationDelay =
+
+            Math.random() *
+            1.2 +
+
+            "s";
+
+
+        document.body
+        .appendChild(item);
+
+
+        setTimeout(
+            function(){
+
+                item.remove();
+
+            },
+            3500
+        );
+
+    }
+
+}
+
+
+/* ===== LUCU EDITION JS ===== */
+
+const funnyMissions = [
+    "Misi 1: jangan bilang 'nanti' selama 10 menit 😭",
+    "Misi 2: minum air dulu. iya, AIR. bukan kopi.",
+    "Misi 3: tarik napas. kamu aman, dunia belum kiamat.",
+    "Misi 4: senyum 3 detik. kalau gagal, ulangi sambil ketawa.",
+    "Misi 5: istirahat 5 menit tanpa merasa bersalah.",
+    "Misi 6: jangan overthinking hal yang belum terjadi 👀",
+    "Misi 7: buka chat, tapi jangan cuma buka. bales juga 😭",
+    "Misi 8: hari ini minimal satu kali bilang 'aku keren'."
+];
+
+const funnyExcuses = [
+    "Aku sibuk... memikirkan kenapa aku sibuk 😭",
+    "Sebentar ya, otakku lagi update software.",
+    "Aku bukan telat. Aku datang dengan timing sendiri 😌",
+    "Hari ini produktif kok. Produktif membuka laptop.",
+    "Aku istirahat bukan mager. Ini maintenance.",
+    "Otakku lagi buffering, harap maklum.",
+    "Aku mau kerja, tapi kasur punya argumen kuat."
+];
+
+const greenFlags = [
+    "💚 Green flag: masih mau istirahat kalau capek.",
+    "💚 Green flag: bisa cerita kalau lagi berat.",
+    "💚 Green flag: nggak harus selalu terlihat kuat.",
+    "💚 Green flag: tahu kapan harus berhenti sebentar.",
+    "💚 Green flag: tetap jalan walau pelan."
+];
+
+function randomExcuse(){
+    document.getElementById("funResult2").innerHTML =
+        "🎲 " + funnyExcuses[Math.floor(Math.random()*funnyExcuses.length)];
+    cuteSound();
+}
+
+function checkGreenFlag(){
+    document.getElementById("funResult2").innerHTML =
+        greenFlags[Math.floor(Math.random()*greenFlags.length)];
+    cuteSound();
+}
+
+function newMission(){
+    document.getElementById("missionResult").innerHTML =
+        "🎯 " + funnyMissions[Math.floor(Math.random()*funnyMissions.length)];
+    cuteSound();
+}
+
+function verifyTicket(){
+    const stamp = document.getElementById("stamp");
+    stamp.classList.add("done");
+    stamp.innerHTML = "✓<br>VERIFIED";
+    document.getElementById("stampResult").innerHTML =
+        "Status: <b>RESMI.</b> Tidak menerima pembatalan sepihak 😭💙";
+    confetti();
+    cuteSound();
+}
+
+function openFlowers(){
+    const flowers = ["💐","🌷","🌸","🌹","🌼","🪻"];
+    const flower = flowers[Math.floor(Math.random()*flowers.length)];
+    document.getElementById("flowerDisplay").innerHTML = flower;
+    document.getElementById("flowerText").innerHTML =
+        "Bunganya resmi dibuka 🌷<br><b>Jangan lupa senyum hari ini ya.</b>";
+    document.getElementById("luckyResult").innerHTML =
+        "💌 Pesan bunga: semoga nanti ketemu dalam keadaan sama-sama baik.";
+    confetti();
+    cuteSound();
+}
+
+function luckyMessage(){
+    const lucky = [
+        "✨ Hari ini keberuntunganmu: 87% ketemu hal baik.",
+        "🍀 Ramalan: ada satu kabar kecil yang bikin senyum.",
+        "💙 Ramalan: jangan terlalu dipikirin, jalanin pelan-pelan.",
+        "🌷 Ramalan: kamu butuh istirahat lebih banyak daripada yang kamu akui.",
+        "⭐ Ramalan: hari ini cocok buat bilang 'yaudah, aku nikmatin aja'.",
+        "😭 Ramalan: kemungkinan ketawa gara-gara hal receh sangat tinggi."
+    ];
+    document.getElementById("luckyResult").innerHTML =
+        lucky[Math.floor(Math.random()*lucky.length)];
+    cuteSound();
+}
+
+function sendSecret(){
+    const message =
+`💌 Pesan rahasia dari Lusi:
+
+Hei Mangzil, kalau kamu baca ini berarti kamu nemu fitur tersembunyi 😭💙
+
+Semoga nanti pas waktunya tiba, kita bisa ketemu dan main bareng.
+
+Jangan lupa jaga diri ya.`;
+
+    const url = "https://wa.me/?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+
+function cuteSound(){
+    try{
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if(!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sine";
+        osc.frequency.value = 620;
+        gain.gain.setValueAtTime(0.0001,ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.045,ctx.currentTime+0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+0.13);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime+0.14);
+    }catch(e){}
+}
+
+/* progress halaman */
+function updateProgress(number){
+    const bar = document.querySelector("#topProgress span");
+    if(bar){
+        bar.style.width = ((number/8)*100) + "%";
+    }
+}
+
+/* bungkus nextPage lama agar progress ikut bergerak */
+const originalNextPage = nextPage;
+nextPage = function(number){
+    cuteSound();
+    originalNextPage(number);
+    updateProgress(number);
+};
+
+/* hati kecil setiap klik */
+document.addEventListener("click", function(e){
+    if(
+        e.target.closest("button") ||
+        e.target.closest(".option") ||
+        e.target.closest(".envelope")
+    ){
+        const heart = document.createElement("div");
+        heart.className = "click-heart";
+        heart.innerHTML = ["💙","🤍","✨","♡"][Math.floor(Math.random()*4)];
+        heart.style.left = e.clientX + "px";
+        heart.style.top = e.clientY + "px";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),1000);
+    }
+});
+
+/* progress awal */
+updateProgress(1);
+
+</script>
+
+
+</body>
+</html>
